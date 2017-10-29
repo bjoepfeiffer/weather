@@ -1,0 +1,11 @@
+<ng-container *ngIf="currentWeather && !loading">
+  <h2>Current:</h2>
+  <img src="http://openweathermap.org/img/w/{{ currentWeather.weather[0].icon }}.png">
+  <label>{{ currentWeather.weather[0].description | titlecase }}</label>
+  <div><label>Temp:</label> {{ currentWeather.main.temp | temp: was.tempUnit }}</div>
+  <div><label>Temp Min:</label> {{ currentWeather.main.temp_min | temp: was.tempUnit }}</div>
+  <div><label>Temp Max:</label> {{ currentWeather.main.temp_max | temp: was.tempUnit }}</div>
+</ng-container>
+<ng-container *ngIf="loading">
+  <img src="/assets/images/loading.gif" height="100px" width=100px>
+</ng-container>

@@ -1,0 +1,7 @@
+<h1>Weather</h1>
+<label>Zip: </label><input [(ngModel)]="was.zip" (blur)="was.changeZip.emit($event.target.value)" />
+<label>Temperature Unit:</label>
+<label><input type="radio" name="tempUnit" [checked]="was.tempUnit === 'f'" (click)="was.tempUnit = 'f'" /> Fahrenheit</label>
+<label><input type="radio" name="tempUnit" [checked]="was.tempUnit === 'c'" (click)="was.tempUnit = 'c'" /> Celcius</label>
+<hr>
+<app-current></app-current>
